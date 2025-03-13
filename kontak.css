@@ -1,0 +1,256 @@
+:root {
+    --primari: #ffffff;
+    --bg: #000000;
+    --text: #222121;
+  }
+ 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  body {
+    height: auto;
+  }
+
+
+  .navbar {
+    font-family: "Satisfy", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #636363;
+    border-bottom: 1px solid var(--text);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99; 
+  }
+  
+  .navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .navbar .navbar-logo span {
+    color: #363636;
+    font-style: italic;
+  }
+ 
+  .navbar .navbar-nav a {
+    color: #ffffff;
+    font-style: italic;
+    justify-content: center;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem; 
+  }
+
+  #acce{
+    display: none;
+  }
+
+  .contact h1 {
+    color: #ffffff;
+  }
+
+
+  .contact {
+    min-height: 115vh; 
+    display: flex;
+    align-items: center;
+    background-image: url("/gambar/coffee-beans-with-props-making-coffee.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+  }
+
+  .contact::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 18%;
+    bottom: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(1, 1, 3, 1) 8%,
+      rgba(255, 255, 255, 0) 80% /*gradasi warna dari gambar ke warna hitam*/
+    );
+  }
+
+  .contact h1 /*bar kontak 50*/ {
+  position: relative;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "Satisfy", sans-serif;
+  left: 36.5rem;
+  top: -17rem;
+  }
+
+  .contact h1 {
+    margin-bottom: 0.3rem;
+  }
+  .contact h3 /*bar 50 kontak*/ {
+    font-family: "Satisfy", sans-serif;
+    position: relative;
+    top: -13rem;
+    left: 15rem;
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    line-height: 1rem;
+    color: #ffffff;
+  }
+  
+
+
+
+  .contact .row {
+    position: relative;
+    right: 20rem;
+    display: auto;
+    margin-top: 5rem;
+    margin-right: 1rem;
+    background-color: #222;
+  }
+  /*60*/
+  .contact .row .img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  /*53*/
+  .contact .row .maps {
+    margin-top: 1rem;
+    flex: 1 1 45rem;
+    width: 38rem;
+    height: 8rem;
+    object-fit: cover;
+  }
+  
+  /*56*/
+  .contact .row form {
+    flex: 1 1 45rem;
+    padding: 1rem 1rem;
+    text-align: center;
+  }
+  /*57*/
+  .contact .row form .input-group {  
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding-right: 1rem 3rem;
+  }
+  /*58*/
+  .contact .row form .input-group input {
+    width: 20rem;
+    height: 1rem;
+    padding: 1.5rem; /*lebar*/
+    font-size: 1rem;
+    background: none;
+    color: #ffffff;
+  }
+  /*59*/
+  .contact .row form .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #cf7610;
+    cursor: pointer;
+    border-radius: 1rem; /*kotak oval*/
+  }
+  
+  footer {
+    background-color: grey;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+  }
+  footer .social {
+    padding: 1rem 0;
+  }
+  
+  
+  
+
+
+  @media (max-width: 1366px) {
+    html {
+      font-size: 100%;
+    }
+  }
+
+  @media (max-width: 756px) {
+    html {
+      font-size: 62.5%;
+    }
+    #acce {
+      display: inline-block;
+    }
+  
+    .navbar .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: gray;
+      border-radius: 5rem; 
+      padding: 1.8rem 0.3rem; 
+      width: 9rem;
+      height: 100vh;
+      transition: 0.58s;
+    }
+    .navbar .navbar-nav.active {
+      right: 0;
+    }
+   
+    .navbar .navbar-nav a {
+      color: #dbd7da;
+      display: block; 
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 1.7rem;
+    }
+    
+    .navbar .navbar-nav a::after {
+      transform-origin: 2 2;
+    }
+   
+    .navbar .navbar-nav a:hover::after {
+      transform: scaleX(0.7); 
+    }
+
+    .contact .row .maps {
+      flex: 1 1 45rem;
+      width: 40rem;
+      height: 15rem;
+      object-fit: cover;
+    }
+    /*61*/
+    .contact .row .maps {
+      height: 30rem;
+    }
+
+
+
+  }
+
+  
+
+  @media (max-width: 350px) {
+    html {
+      font-size: 45%;
+    }
+  }

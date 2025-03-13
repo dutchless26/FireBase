@@ -1,0 +1,27 @@
+.acc h1 {
+    position: relative;
+    background-color: aqua;
+    padding: 0.3rem;
+    width: 1rem;
+    top: 10px;
+    left: px;
+}
+.acc h2 {
+    position: relative;
+    background-color: blue;
+    padding: 0.3rem;
+    width: 1rem;
+    top: -115px;
+    left: 80px;
+    
+}
+
+.acc h3 {
+    position: relative;
+    background-color: brown;
+    padding: 0.3rem;
+    width: 1rem;
+    top: -235px;
+    left: 160px;
+
+}
