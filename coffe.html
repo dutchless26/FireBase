@@ -39,75 +39,80 @@
          </nav>
         </nav>
 
-            
-        <div class="container">
-          <div id="data" class="container">
+        <section class="coffee" id="menu">
+          <main: class="content"> 
+
+            <p><h1>Coffee Kami</h1></p>
+
+            <div class="container">
+              <div id="data" class="container">
+              </div>
           </div>
-      </div>
-  
-      <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
-      <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-  
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "YAIzaSyCLYtnkkN4jfPA7yW9ZCYf_jkuYisQLb8A",
-            authDomain: "kopiganteng-3eb15.firebaseapp.com",
-            projectId: "kopiganteng-3eb15",
-            storageBucket: "kopiganteng-3eb15.firebasestorage.app",
-            messagingSenderId: "873615591065",
-            appId: "1:873615591065:web:73e94e53a31eb29231da08",
-            measurementId: "G-B3JMCBRQ7D"
-          };
-  
-        /* Initialize Firebase */
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-  
-        /* Fetch data dari Firestore database */
-        async function fetchData() {
-          try {
-            const productsCol = db.collection("products"); /** Replace 'products' sesuai dengan nama collection anda */
-            const querySnapshot = await productsCol.get();
-            const data = querySnapshot.docs.map((doc) => ({
-              id: doc.id,
-              ...doc.data(),
-            }));
-            return data;
-          } catch (error) {
-            console.error("Error fetching data:", error);
-            return [];
-          }
-        }
-  
-        fetchData().then((data) => {
-          console.log(data)
-          /* Ambil elemen HTML dengan ID 'data'*/
-          const dataProduct = document.getElementById("data");
-  
-          dataProduct.innerHTML = data.map((item) => 
-              `<div class="card">
-                  <img src="${item.gambar || "default.jpg"}" alt="${
-                      item.kopi || "Produk"
-                      }">
-                  <h3>${item.kopi || "Produk Tidak Diketahui"}</h3>
-                  <p class="price">Rp ${
-                  item.harga ? item.harga.toLocaleString() : "0"
-                  }</p>
-              </div>`).join("");
-        });
-      </script>
+      
+          <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+          <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+      
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "YAIzaSyCLYtnkkN4jfPA7yW9ZCYf_jkuYisQLb8A",
+                authDomain: "kopiganteng-3eb15.firebaseapp.com",
+                projectId: "kopiganteng-3eb15",
+                storageBucket: "kopiganteng-3eb15.firebasestorage.app",
+                messagingSenderId: "873615591065",
+                appId: "1:873615591065:web:73e94e53a31eb29231da08",
+                measurementId: "G-B3JMCBRQ7D"
+              };
+      
+            /* Initialize Firebase */
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+      
+            /* Fetch data dari Firestore database */
+            async function fetchData() {
+              try {
+                const productsCol = db.collection("products"); /** Replace 'products' sesuai dengan nama collection anda */
+                const querySnapshot = await productsCol.get();
+                const data = querySnapshot.docs.map((doc) => ({
+                  id: doc.id,
+                  ...doc.data(),
+                }));
+                return data;
+              } catch (error) {
+                console.error("Error fetching data:", error);
+                return [];
+              }
+            }
+      
+            fetchData().then((data) => {
+              console.log(data)
+              /* Ambil elemen HTML dengan ID 'data'*/
+              const dataProduct = document.getElementById("data");
+      
+              dataProduct.innerHTML = data.map((item) => 
+                  `<div class="card">
+                      <img src="${item.gambar || "default.jpg"}" alt="${
+                          item.kopi || "Produk"
+                          }">
+                      <h3>${item.kopi || "Produk Tidak Diketahui"}</h3>
+                      <p class="price">Rp ${
+                      item.harga ? item.harga.toLocaleString() : "0"
+                      }</p>
+                  </div>`).join("");
+            });
+          </script>
 
+          </main>
+          
+                </section>
 
-
-
-  
+                <script src="script.js"></script>
         
 </body>
 </html>
