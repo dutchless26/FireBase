@@ -63,7 +63,7 @@
     min-height: 110vh; 
     display: flex;
     align-items: center;
-    background-image: url("/gambar/Bg.jpg");
+    background-image: url("Bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

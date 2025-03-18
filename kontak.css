@@ -65,7 +65,7 @@
     min-height: 115vh; 
     display: flex;
     align-items: center;
-    background-image: url("/gambar/coffee-beans-with-props-making-coffee.jpg");
+    background-image: url("coffee-beans-with-props-making-coffee.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
